@@ -1,4 +1,4 @@
-class Users::RegistrationsController < Devise::RegistrationsController
+class Users::RegistrosController < Devise::RegistrosController
   before_action :configure_sign_up_params, only: [:create]
 
 
@@ -6,7 +6,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :role_id, :password, :password_confirmation])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:usuario, :role_id, :password, :password_confirmation])
   end
 
 
