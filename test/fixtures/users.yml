@@ -1,0 +1,11 @@
+one:
+  primer_nombre: MyString
+  apellido: MyString
+  usuario: MyString
+  role: one
+
+two:
+  primer_nombre: MyString
+  apellido: MyString
+  usuario: MyString
+  role: two
