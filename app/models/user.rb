@@ -1,26 +1,25 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-  belongs_to :role
-  has_many :chats
-  validates :usuario, uniqueness: true
-  Role.all.each do |role|
-    define_method(role.name+'?') { self.role_id == role.id }
-  end
-end
-class User < ApplicationRecord
-  
   devise :database_authenticatable, :registerable, :rememberable, :trackable, :validatable
   belongs_to :role
-  has_many :chats
+  has_many :sent_chats, class_name: 'Chat',foreign_key: :id_e
+  has_many :received_chats, class_name: 'Chat', foreign_key: :id_r
+
 
   validates :usuario, uniqueness: true
+
+  scope :non_admin_users, -> {where('role_id != ?', Role.admin.id)}
+  scope :trainers, -> {where(role: Role.trainer)}
+  scope :users, -> {where(role: Role.user)}
+
+  def chats
+    Chat.where('sender_id = ? or receiver_id = ?', self.id, self.id).order(:created_at)
+  end
 
   def self.define_role_helpers
     Role.all.each do |role|
-      define_method(role.name+'?') { role.id == self.role_id }
+      define_method(role.name+'?') { id_r == self.id_r }
     end
   end
 

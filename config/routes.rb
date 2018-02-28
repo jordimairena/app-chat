@@ -5,4 +5,7 @@ Rails.application.routes.draw do
       sessions: 'users/sessions',
       registros: 'users/registros'
   }
+  resources :users, only: [] do
+    resources :chats
+  end
 end

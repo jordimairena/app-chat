@@ -11,4 +11,9 @@ RSpec.describe Chat, type: :model do
     expect(chat.valid?).to be_falsey
     expect(chat.errors[:sender]).to eql(['Sender can not be receiver.'])
   end
+
+  it 'should not have empty message' do
+    chat = build(:chat, mensaje: '', sender: @sender, receiver: @receiver)
+    expect(chat.valid?).to be_falsey
+  end
 end

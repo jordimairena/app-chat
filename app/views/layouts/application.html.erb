@@ -8,12 +8,15 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
+    
     <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+
 
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
     <%= javascript_include_tag "application" %>
 
+   
   </head>
   <body>
 
@@ -24,9 +27,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Chat App</a>
+        <a class="navbar-brand" href="/">Chat App</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <%= link_to 'Log out', destroy_user_session_path, method: 'DELETE' %>
+            </li>
           </ul>
         </div>
       </div>
@@ -34,13 +42,11 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-md-offset-4 col-md-8">
+        <div class="col-md-12">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
       </div><!--/row-->
-
-
     </div> <!-- /container -->
 
   </body>

@@ -1,8 +1,9 @@
 class Chat < ApplicationRecord
 	belongs_to :sender, class_name: 'User', foreign_key: :id_e
 	belongs_to :receiver, class_name: 'User', foreign_key: :id_r
-	validate :sender_receiver_uniqueness
-
+	
+  validate :sender_receiver_uniqueness
+  validates :mensaje, presence: true
   private
 
   def sender_receiver_uniqueness

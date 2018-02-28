@@ -6,3 +6,27 @@
 .tm-10{
     margin-top: 10px;
 }
+.wd-20{
+    width: 20%;
+}
+.chat-btn-box{
+    max-width: 400px;
+}
+.chat-btn-box .btn{
+    width: 80%;
+}
+.recipient_box{
+    display: none;
+}
+.ui-selected{
+    background-color: #2ca3e7 !important;
+    color: #ffffff;
+}
+
+blockquote{
+    border-color: #48c400 !important;
+}
+
+blockquote.blockquote-reverse{
+  border-color: #2ca3e7 !important;
+}
