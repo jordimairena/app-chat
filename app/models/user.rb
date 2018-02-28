@@ -19,7 +19,7 @@ class User < ApplicationRecord
 
   def self.define_role_helpers
     Role.all.each do |role|
-      define_method(role.name+'?') { id_r == self.id_r }
+      define_method(role.name+'?') { role.id == self.role_id }
     end
   end
 
