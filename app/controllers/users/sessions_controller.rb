@@ -2,7 +2,7 @@ class Users::SessionsController < Devise::SessionsController
   before_action :configure_sign_in_params, only: [:create]
   layout 'public'
   # GET /resource/sign_in
-  def nuevo
+  def new
     super
   end
 
@@ -20,6 +20,6 @@ class Users::SessionsController < Devise::SessionsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_in_params
-    devise_parameter_sanitizer.permit(:registro, keys: [:usuario])
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:usuario])
   end
 end

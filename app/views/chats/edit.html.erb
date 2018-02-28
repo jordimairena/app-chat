@@ -1,2 +1,13 @@
-<h1>Chats#edit</h1>
-<p>Find me in app/views/chats/edit.html.erb</p>
+<div class="page-header">
+  <h2>Edit Chat</h2>
+</div>
+<div class="row">
+  <div class="col col-md-12">
+    <p>Mensaje enviado a: <b> <%= @chat.receiver.usuario %></b></p>
+  </div>
+</div>
+<div class="row">
+  <div class="col col-md-8">
+    <%= render 'form' %>
+  </div>
+</div>

@@ -14,7 +14,7 @@ class User < ApplicationRecord
   scope :users, -> {where(role: Role.user)}
 
   def chats
-    Chat.where('sender_id = ? or receiver_id = ?', self.id, self.id).order(:created_at)
+    Chat.where('id_e = ? or id_r = ?', self.id, self.id).order(:created_at)
   end
 
   def self.define_role_helpers

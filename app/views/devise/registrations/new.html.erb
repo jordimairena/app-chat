@@ -1,5 +1,5 @@
 <div class="well">
-  <legend>Registro</legend>
+  <legend>Sign Up</legend>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
     <%= f.input :usuario %>
@@ -9,10 +9,11 @@
     <%= f.input :password_confirmation, autocomplete: 'off'%>
     <div class="row">
       <div class="col col-md-12">
-        <%= f.submit "Registrarse", class:'col-lg-offset-2 col-md-8  btn btn-primary' %>
+        <%= f.submit "Sign up", class:'col-lg-offset-2 col-md-8  btn btn-primary' %>
       </div>
       <div class="col col-md-12 tm-10">
-        <%= link_to "Iniciar Sesion", new_session_path(resource_name), class: 'btn btn-default col-lg-offset-2 col col-md-8' %>
+        <%= link_to "Log In", new_session_path(resource_name), class: 'btn btn-default col-lg-offset-2 col col-md-8' %>
       </div>
     </div>
   <% end %>
+  </div>

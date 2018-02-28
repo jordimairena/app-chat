@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-    root 'home#inicio'
 
   devise_for :users, controllers: {
       sessions: 'users/sessions',
-      registros: 'users/registros'
+      registrations: 'users/registros'
   }
+      root 'home#inicio'
+
   resources :users, only: [] do
     resources :chats
   end
