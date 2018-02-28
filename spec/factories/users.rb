@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :user do
-    primer_nombre "MyString"
-    apellido "MyString"
-    usuario "MyString"
+    primer_nombre "texto"
+    apellido "texto"
+    usuario "texto"
     role nil
   end
 end

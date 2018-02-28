@@ -48,7 +48,10 @@ gem 'simple_form'
 # Use for jquery installation in rails 5
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-
+group :test do
+  gem "rspec"
+  gem 'factory_girl_rails', :require => false
+end
 group :production do
   gem 'pg','0.20.0'
 end
@@ -61,7 +64,6 @@ group :development, :test do
   gem 'faker'
   gem 'pry'
   gem 'rspec-rails', '~> 3.5'
-  gem 'factory_girl_rails', '~> 4.0'
 end
 
 group :development do

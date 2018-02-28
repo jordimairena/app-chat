@@ -1,5 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Chat, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before {
+    @receiver = create(:user)
+    @sender = create(:user)
+  }
+
+  it 'should not have same sender and receiver' do
+    chat = build(:chat, sender: @sender, receiver: @sender)
+    expect(chat.valid?).to be_falsey
+    expect(chat.errors[:sender]).to eql(['Sender can not be receiver.'])
+  end
 end

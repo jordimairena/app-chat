@@ -160,6 +160,10 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    rspec (3.7.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
     rspec-core (3.7.1)
       rspec-support (~> 3.7.0)
     rspec-expectations (3.7.0)
@@ -246,7 +250,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   devise
-  factory_girl_rails (~> 4.0)
+  factory_girl_rails
   faker
   jbuilder (~> 2.5)
   jquery-rails
@@ -256,6 +260,7 @@ DEPENDENCIES
   pry
   puma (~> 3.7)
   rails (~> 5.1.2)
+  rspec
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
   selenium-webdriver

@@ -1,38 +1,18 @@
-<h2>Creacion de Cuenta</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-  <div class="field">
-    <%= f.label :usuario %><br />
-    <%= f.text_field :usuario, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :role %><br />
-    <%= f.select :role_id, Role.all.collect { |r| [ r.name, r.id ] }, include_blank: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Completar" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+<div class="well">
+  <legend>Registro</legend>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+    <%= f.input :usuario %>
+    <%= f.input :email %>
+    <%= f.input :role_id, collection: Role.non_admin_roles.map { |r| [ r.name.capitalize, r.id ] }, include_blank: 'Escoger Rol' %>
+    <%= f.input :password, hint: "#{@minimum_password_length} characters minimum", autocomplete: 'off' %>
+    <%= f.input :password_confirmation, autocomplete: 'off'%>
+    <div class="row">
+      <div class="col col-md-12">
+        <%= f.submit "Registrarse", class:'col-lg-offset-2 col-md-8  btn btn-primary' %>
+      </div>
+      <div class="col col-md-12 tm-10">
+        <%= link_to "Iniciar Sesion", new_session_path(resource_name), class: 'btn btn-default col-lg-offset-2 col col-md-8' %>
+      </div>
+    </div>
+  <% end %>

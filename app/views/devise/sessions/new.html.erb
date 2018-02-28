@@ -1,19 +1,15 @@
-<h2>Iniciar Sesion</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :usuario %><br />
-    <%= f.text_field :usuario, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Iniciar Sesion" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+<div class="well">
+  <legend>Iniciar Sesion</legend>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= f.input :usuario %>
+    <%= f.input :password %>
+    <div class="row">
+      <div class="col col-md-12">
+        <%= f.submit "Iniciar Sesion", class:'col-lg-offset-2 col-md-8  btn btn-primary' %>
+      </div>
+      <div class="col col-md-12 tm-10">
+        <%= link_to "Registrarse", new_registration_path(resource_name), class: 'btn btn-default text-center col-lg-offset-2 col col-md-8' %>
+      </div>
+    </div>
+  <% end %>
+</div>

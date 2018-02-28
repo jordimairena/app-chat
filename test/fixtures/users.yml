@@ -1,11 +1,11 @@
 one:
-  primer_nombre: MyString
-  apellido: MyString
-  usuario: MyString
+  primer_nombre: texto
+  apellido: texto
+  usuario: texto
   role: one
 
 two:
-  primer_nombre: MyString
-  apellido: MyString
-  usuario: MyString
+  primer_nombre: texto
+  apellido: texto
+  usuario: texto
   role: two
