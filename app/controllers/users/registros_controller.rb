@@ -6,7 +6,7 @@ class Users::RegistrosController < Devise::RegistrosController
 
   
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:usuario, :role_id, :password, :password_confirmation])
+    devise_parameter_sanitizer.permit(:registro, keys: [:usuario, :role_id, :password, :password_confirmation])
   end
 
 
