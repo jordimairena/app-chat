@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :chat do
-    mensaje "MyText"
+    mensaje "texto"
     id_r 1
     id_e 1
   end
